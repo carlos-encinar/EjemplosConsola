@@ -75,7 +75,7 @@ public class EjemplosConsola {
             resultado = true;
         }
         
-        return true;//TODO: hay que cambiar esto luego para que funcione bien
+        return resultado;
     }
     
     /**
