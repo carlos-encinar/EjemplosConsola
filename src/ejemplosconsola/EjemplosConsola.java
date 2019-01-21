@@ -82,6 +82,35 @@ public class EjemplosConsola {
         return resultado;
     }
     
+    private void palindromoV2(String cadena){
+        
+        String auxiliar ="";
+        for(int i=0; i< cadena.length(); i++){
+            
+            if (cadena.charAt(i) != ' '){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+        }
+        //Aqui ya tengo en el string auxiliar todas las letras
+        //de la palabra original pero sin espacios en blanco
+        
+        int indiceIzq= 0;
+        int indiceDer= auxiliar.length()-1;
+        
+        while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer) && indiceIzq <= indiceDer){
+            indiceIzq++;
+            indiceDer--;
+        }
+        boolean resultado = true;
+        if(indiceIzq < indiceDer){ 
+            System.out.print("La cadena " + cadena + "NO es un palindromo");
+        }
+        else{
+            System.out.print("La cadena " + cadena + "SI es un palindromo");
+        }
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -94,6 +123,7 @@ public class EjemplosConsola {
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
         
         System.out.println( ejercicios.palindromo("ACASO HUBO BUHOS ACA"));
+        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
     }
     
 }
