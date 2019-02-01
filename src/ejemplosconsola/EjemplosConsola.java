@@ -94,7 +94,7 @@ public class EjemplosConsola {
         //Aqui ya tengo en el string auxiliar todas las letras
         //de la palabra original pero sin espacios en blanco
         
-        int indiceIzq= 0;
+        int indiceIzq = 0;
         int indiceDer= auxiliar.length()-1;
         
         while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer) && indiceIzq <= indiceDer){
@@ -111,6 +111,70 @@ public class EjemplosConsola {
         
     }
     
+    //OTRO EJERCICIO
+    private boolean esIsograma (String palabra){
+
+        for(int i=0; i< palabra.length()-1; i++){
+            for (int j=i; j< palabra.length(); j++){
+                if (palabra.charAt(i) == palabra.charAt(i)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    //Autor: María
+    private void imprimeMes(int numx){
+        if (numx >7){
+            numx = 7;
+        }
+        int contador = 0;
+        //pintara tantas xx como numX sea
+    
+        for (int j=1; j<numx; j++){
+            System.out.print("XX ");
+            contador = contador + 1;
+        }
+        for (int i=1; i<=31; i++){
+            if (contador <=7){
+                if (i<=9){
+                    System.out.print("0" + i);
+                    System.out.print(" ");
+                }}
+            if (i>9){
+                System.out.print(i);
+                System.out.print(" ");
+            }
+            contador = contador + 1;
+        
+            if(contador==7){
+                System.out.println("");
+                contador = 0;
+            }
+        }
+        for(int x=contador; x<7; x++){
+            System.out.print("XX ");
+        }
+        
+    }
+    
+    private boolean esAnagrama (String palabraA, String palabraB){
+        //pasamos a mayusculas todas las letras 
+        palabraA = palabraA.toUpperCase();
+        palabraB = palabraB.toUpperCase();
+        
+        boolean anagrama = false; //indica si las palabras son anagramas o no
+        if(palabraA.length() == palabraB.length()){//solo empiezo a chequear si dos palabras tienen la misma longitud
+            for (int i=0; i<palabraA.length(); i++){
+                for (int j=0; j<palabraA.length(); j++){
+                    
+                }
+            }
+        }
+    }
+
+    
     /**
      * @param args the command line arguments
      */
@@ -118,12 +182,20 @@ public class EjemplosConsola {
     public static void main(String[] args) {
         EjemplosConsola ejercicios = new EjemplosConsola();
         
+        /*
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros)));
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros1)));
         System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
         
-        System.out.println( ejercicios.palindromo("ACASO HUBO BUHOS ACA"));
-        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
+        //System.out.println( ejercicios.palindromo("ACASO HUBO BUHOS ACA"));
+        //ejercicios.palindromoV2("ACASO HUBO BUHOS ACA");
+        System.out.println( ejercicios.esIsograma("MURCIELAGOO"));
+        */
+        for (int i=7; i<14; i++){
+            ejercicios.imprimeMes(i);
+            System.out.println();
+            System.out.println();
+        }
     }
     
 }
